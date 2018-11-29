@@ -24,8 +24,6 @@ Y <- 10 + 3 * X1 + -5 * X2 + 3 * rnorm(n = N)
 head(Y)
 
 write.csv(data.frame(Y = Y, X1 = X1, X2 = X2), "sample_data.csv", row.names = FALSE)
-
-
 ```
 
 ## Create a plot in Python
@@ -96,5 +94,8 @@ estimate: sample_data.csv estimate_model.R
 
 A simple call to make only builds the first target (`sample`). To build the other targets, we have to use: `make plot` and `make estimate`.
 
-# Making all targets (v2 and v3)
+# Making all targets and dealing with dependencies (v2 and v3)
+
+ `plot.pdf` and `estimation_summary.txt` depend on `sample_data.csv`
+ 
 
